@@ -20,8 +20,9 @@ public class BillPayment {
         String input=sc.nextLine();
 
         if(input.equalsIgnoreCase("w")){
-            Billing wallet=new WalletPay();
-            wallet.generateBill(cart.listOfProducts);
+            WalletPay wallet=new WalletPay();
+            //wallet.generateBill(cart.listOfProducts);
+            wallet.paymentCalculation(cart.listOfProducts);
         }
         else if(input.equalsIgnoreCase("c")){
             Billing cash=new CashPayment();

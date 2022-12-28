@@ -2,8 +2,7 @@ package testing.shoppingCart;
 
 import java.util.Map;
 
-public class Offers {
-
+public class ProductOffers {
 
     public static int getMilkOffer(Map<Products, Integer> listOfProducts) {
 

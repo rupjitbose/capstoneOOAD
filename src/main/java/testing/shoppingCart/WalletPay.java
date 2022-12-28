@@ -9,17 +9,26 @@ public class WalletPay implements Payment,Billing {
     @Override
     public void generateBill(Map<Products, Integer> listOfProducts){
 
-        for (Map.Entry<Products,Integer> entry : listOfProducts.entrySet()){
+        for (Map.Entry<Products,Integer> map : listOfProducts.entrySet()){
             double ptotal=0;
 
-            total=total+entry.getKey().getPrice()*entry.getValue();
-            ptotal=entry.getKey().getPrice()*entry.getValue();
+            total=total+map.getKey().getPrice()*map.getValue();
+            ptotal=map.getKey().getPrice()*map.getValue();
 
-            if(entry.getKey().getName().equalsIgnoreCase("1liter Milk")){
-                System.out.println(entry.getKey().getName()+" : "+Offers.getMilkOffer(listOfProducts)+" : "+ptotal);
+            if(map.getKey().getName().equalsIgnoreCase("1liter Milk")){
+                System.out.println(map.getKey().getName()+" : "+Offers.getMilkOffer(listOfProducts)+
+                        " : "+ptotal);
+            }
+            else if(map.getKey().getName().equalsIgnoreCase("1kg Apple")){
+                System.out.println(map.getKey().getName()+" : "+Offers.getAppleOffer(listOfProducts)+
+                        " : "+ptotal);
+            }
+            else if(map.getKey().getName().equalsIgnoreCase("NewsPaper")){
+                System.out.println(map.getKey().getName()+" : "+Offers.getNewsPaperOffer(listOfProducts)+
+                        " : "+ptotal);
             }
             else
-            System.out.println(entry.getKey().getName()+" : "+entry.getValue()+" : "+ptotal);
+                System.out.println(map.getKey().getName() + " : " + map.getValue() + " : " + ptotal);
     }
         paymentCalculation();
     }

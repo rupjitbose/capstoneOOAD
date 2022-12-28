@@ -14,7 +14,16 @@ public class CashPayment implements Billing,Payment {
             ptotal = map.getKey().getPrice() * map.getValue();
 
             if(map.getKey().getName().equalsIgnoreCase("1liter Milk")){
-                System.out.println(map.getKey().getName()+" : "+Offers.getMilkOffer(listOfProducts)+" : "+ptotal);
+                System.out.println(map.getKey().getName()+" : "+Offers.getMilkOffer(listOfProducts)+
+                        " : "+ptotal);
+            }
+           else if(map.getKey().getName().equalsIgnoreCase("1kg Apple")){
+                System.out.println(map.getKey().getName()+" : "+Offers.getAppleOffer(listOfProducts)+
+                        " : "+ptotal);
+            }
+           else if(map.getKey().getName().equalsIgnoreCase("NewsPaper")){
+                System.out.println(map.getKey().getName()+" : "+Offers.getNewsPaperOffer(listOfProducts)+
+                        " : "+ptotal);
             }
             else
             System.out.println(map.getKey().getName() + " : " + map.getValue() + " : " + ptotal);

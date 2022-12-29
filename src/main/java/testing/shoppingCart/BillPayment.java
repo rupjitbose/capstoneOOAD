@@ -28,6 +28,5 @@ public class BillPayment {
             cash.paymentCalculation(cart.listOfProducts);
         }
         else System.out.println("Option entered is invalid!");
-
     }
 }

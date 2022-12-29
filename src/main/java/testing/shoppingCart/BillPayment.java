@@ -21,12 +21,11 @@ public class BillPayment {
 
         if(input.equalsIgnoreCase("w")){
             WalletPay wallet=new WalletPay();
-            //wallet.generateBill(cart.listOfProducts);
             wallet.paymentCalculation(cart.listOfProducts);
         }
         else if(input.equalsIgnoreCase("c")){
-            Billing cash=new CashPayment();
-            cash.generateBill(cart.listOfProducts);
+            CashPayment cash=new CashPayment();
+            cash.paymentCalculation(cart.listOfProducts);
         }
         else System.out.println("Option entered is invalid!");
 

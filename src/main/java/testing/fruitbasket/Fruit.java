@@ -1,6 +1,6 @@
 package testing.fruitbasket;
 
-public class fruits {
+public class Fruit {
 
     private String name;
     private String color;

@@ -4,62 +4,59 @@ package testing.fruitbasket;
 import java.util.ArrayList;
 import java.util.List;
 
-public class bigbowl {
+public class BigBowl {
 
-    public List<fruits> fruitsList=new ArrayList<>();
-
-
-
+    public List<Fruit> fruitList =new ArrayList<>();
     public static void main(String[] ags){
 
-        fruits orange=new fruits();
+        Fruit orange=new Fruit();
         orange.setName("orange");
         orange.setColor("orange");
         orange.setSize("big");
         orange.setType("sweet");
 
-        fruits lime=new fruits();
+        Fruit lime=new Fruit();
         lime.setName("lime");
         lime.setColor("green");
         lime.setSize("mid");
         lime.setType("sour");
 
-        fruits apple=new fruits();
+        Fruit apple=new Fruit();
         apple.setName("apple");
         apple.setColor("red");
         apple.setSize("big");
         apple.setType("tart");
 
-        fruits grep=new fruits();
+        Fruit grep=new Fruit();
         grep.setName("grep");
         grep.setColor("green");
         grep.setSize("small");
         grep.setType("sweet");
 
-        fruits mango=new fruits();
+        Fruit mango=new Fruit();
         mango.setName("mango");
         mango.setColor("yellow");
         mango.setSize("big");
         mango.setType("sweet");
 
-        bigbowl b=new bigbowl();
-        b.fruitsList.add(apple);
-        b.fruitsList.add(grep);
-        b.fruitsList.add(orange);
-        b.fruitsList.add(lime);
-        b.fruitsList.add(mango);
-        System.out.println("Fruits in the bigbowl:"+  b.fruitsList +"\n");
+        BigBowl b=new BigBowl();
+        b.fruitList.add(grep);
+        b.fruitList.add(orange);
+        b.fruitList.add(lime);
+        b.fruitList.add(mango);
+        b.fruitList.add(apple);
+        System.out.println("Fruits in the bigbowl:"+  b.fruitList +"\n");
 
 
-        basketStand bs=new basketStand();
+        BasketStand bs=new BasketStand();
 
-        bs.sortBySize(b.fruitsList);
+        bs.sortBySize(b.fruitList);
         bs.showBasket();
 
-        bs.sortbByColor(b.fruitsList);
+        bs.sortbByColor(b.fruitList);
         bs.showBasket();
 
-        bs.sortByType(b.fruitsList);
+        bs.sortByType(b.fruitList);
         bs.showBasket();
     }
 

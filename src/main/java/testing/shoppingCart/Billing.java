@@ -3,9 +3,7 @@ package testing.shoppingCart;
 import java.util.Map;
 
 public class Billing {
-
     double total=0.0;
-    double discountTotal=0.0;
     public void generateBill(Map<Products, Integer> listOfProducts) {
         for (Map.Entry<Products,Integer> map : listOfProducts.entrySet()) {
             double ptotal = 0;

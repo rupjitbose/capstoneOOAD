@@ -1,43 +1,17 @@
 package testing.fruitbasket;
 
-
 import java.util.ArrayList;
 import java.util.List;
 
 public class BigBowl {
-
     public List<Fruit> fruitList =new ArrayList<>();
     public static void main(String[] ags){
 
-        Fruit orange=new Fruit();
-        orange.setName("orange");
-        orange.setColor("orange");
-        orange.setSize("big");
-        orange.setType("sweet");
-
-        Fruit lime=new Fruit();
-        lime.setName("lime");
-        lime.setColor("green");
-        lime.setSize("mid");
-        lime.setType("sour");
-
-        Fruit apple=new Fruit();
-        apple.setName("apple");
-        apple.setColor("red");
-        apple.setSize("big");
-        apple.setType("tart");
-
-        Fruit grep=new Fruit();
-        grep.setName("grep");
-        grep.setColor("green");
-        grep.setSize("small");
-        grep.setType("sweet");
-
-        Fruit mango=new Fruit();
-        mango.setName("mango");
-        mango.setColor("yellow");
-        mango.setSize("big");
-        mango.setType("sweet");
+        Fruit orange=new Fruit("orange","orange","big","sweet");
+        Fruit lime=new Fruit("lime","green","mid","sour");
+        Fruit apple=new Fruit("apple","red","big","tart");
+        Fruit grep=new Fruit("grep","green","small","sweet");
+        Fruit mango=new Fruit("mango","yellow","big","sweet");
 
         BigBowl b=new BigBowl();
         b.fruitList.add(grep);
@@ -45,8 +19,7 @@ public class BigBowl {
         b.fruitList.add(lime);
         b.fruitList.add(mango);
         b.fruitList.add(apple);
-        System.out.println("Fruits in the bigbowl:"+  b.fruitList +"\n");
-
+        System.out.println("Big Bowl have: "+b);
 
         BasketStand bs=new BasketStand();
 
@@ -60,4 +33,12 @@ public class BigBowl {
         bs.showBasket();
     }
 
+    @Override
+    public String toString(){
+        String s="";
+        for(Fruit f:  this.fruitList){
+            s=s+f.getName()+" ,";
+        }
+        return s+"\n" ;
+    }
 }

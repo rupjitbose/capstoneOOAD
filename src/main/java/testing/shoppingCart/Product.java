@@ -1,21 +1,19 @@
 package testing.shoppingCart;
+import lombok.Builder;
 
-public class Products {
-
+@Builder
+public class Product {
     private String name;
     private double price;
 
-    public Products(String name, double price) {
+    public Product(String name, double price) {
         this.name = name;
         this.price = price;
     }
-
     public String getName() {
         return name;
     }
     public double getPrice() {
         return price;
     }
-
-
 }

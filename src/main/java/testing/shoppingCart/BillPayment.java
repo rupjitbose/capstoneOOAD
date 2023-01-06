@@ -1,14 +1,15 @@
 package testing.shoppingCart;
-
 import java.util.Scanner;
 
 public class BillPayment {
 
     public static void main(String[] a){
 
-        Products milk=new Products("1liter Milk",70.00);
-        Products apple=new Products("1kg Apple",110.00);
-        Products newspaper=new Products("NewsPaper",12.00);
+        Product milk=(new Product("1liter Milk",70.00));
+        Product apple=new Product("1kg Apple",110.00);
+        Product newspaper=new Product("NewsPaper",12.00);
+        Product oranges=Product.builder().name("1Kg Oranges").price(100.00).build();
+
 
         Cart cart=new Cart();
         cart.addToCart(milk,3);
@@ -21,11 +22,11 @@ public class BillPayment {
 
         if(input.equalsIgnoreCase("w")){
             WalletPay wallet=new WalletPay();
-            wallet.paymentCalculation(cart.listOfProducts);
+            wallet.paymentCalculation(cart.cartData);
         }
         else if(input.equalsIgnoreCase("c")){
             CashPayment cash=new CashPayment();
-            cash.paymentCalculation(cart.listOfProducts);
+            cash.paymentCalculation(cart.cartData);
         }
         else System.out.println("Option entered is invalid!");
     }

@@ -1,14 +1,15 @@
 package testing.shoppingCart;
 
-
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class Cart {
-    Map<Products,Integer> listOfProducts=new HashMap<>();
+    Map<Product,Integer> cartData =new HashMap<>();
 
-    public void addToCart(Products p, int amount){
-        listOfProducts.put(p,amount);
+    public void addToCart(Product p, int amount){
+        cartData.put(p,amount);
     }
 
 }

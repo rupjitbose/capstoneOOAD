@@ -6,9 +6,9 @@ import java.util.List;
 import java.util.Map;
 
 public class Cart {
-    Map<Product,Integer> cartData =new HashMap<>();
+    Map<Product,Double> cartData =new HashMap<>();
 
-    public void addToCart(Product p, int amount){
+    public void addToCart(Product p, double amount){
         cartData.put(p,amount);
     }
 

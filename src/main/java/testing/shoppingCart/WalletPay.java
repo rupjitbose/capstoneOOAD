@@ -1,10 +1,9 @@
 package testing.shoppingCart;
-
 import java.util.Map;
 
 public class WalletPay extends Billing implements Payment,Discount {
     @Override
-    public void paymentCalculation(Map<Product, Integer> cartData) {
+    public void paymentCalculation(Map<Product, Double> cartData) {
         generateBill(cartData);
         System.out.println("5 % discount on wallet payment on payment over 100, Total: "
                     +(total-total*discountOffer())+"\n");
@@ -12,8 +11,7 @@ public class WalletPay extends Billing implements Payment,Discount {
 
     @Override
     public double discountOffer() {
-
-        double discount=0;
+        double discount;
         if(total>=100)
             discount=.05;
         else

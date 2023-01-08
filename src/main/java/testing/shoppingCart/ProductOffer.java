@@ -1,40 +1,48 @@
 package testing.shoppingCart;
 
-import java.util.Map;
-
 public class ProductOffer {
 
-    public static int getMilkOffer(int amount) {
-        int qty = 0;
+    public static double getMilkOffer(double amount) {
+        int addon = 0;
         if (amount >= 2) {
-                qty = amount + amount / 2;
+                addon = (int)amount / 2;
                 System.out.printf("You get extra %s Liter Milk for as part of buy 2 get 1 free offer. \n"
-                        , amount / 2);
+                        ,  addon);
             }
+        return amount+addon;
+    }
+    public static double getOrangeOffer(double amount) {
+        int addon = 0;
+        if (amount >= 2) {
+            addon = (int)amount / 2;
+            System.out.printf("You get extra %s kg Orange for as part of buy 2 get 1 free offer. \n"
+                    ,addon);
+        }
+        return amount+addon;
+    }
+
+    public static double getAppleOffer(double amount) {
+        double qty = amount;
         return qty;
     }
 
-
-    public static int getAppleOffer(int amount) {
-        int qty = amount;
+    public static double getNewsPaperOffer(double amount) {
+        double qty = amount;
         return qty;
     }
-
-    public static int getNewsPaperOffer(int amount) {
-        int qty = amount;
-        return qty;
-    }
-
-    public static int getOffer(String name, int amount) {
-        int newQty=0;
-        if(name.equalsIgnoreCase("1liter Milk")){
+    public static double getOffer(String name, double amount) {
+        double newQty=0;
+        if(name.equalsIgnoreCase("Milk")){
             newQty= getMilkOffer(amount);
         }
-        else if(name.equalsIgnoreCase("1kg Apple")){
+        else if(name.equalsIgnoreCase("Apple")){
             newQty= getAppleOffer(amount);
         }
         else if(name.equalsIgnoreCase("NewsPaper")){
             newQty= getNewsPaperOffer(amount);
+        }
+        else if(name.equalsIgnoreCase("Oranges")){
+            newQty= getOrangeOffer(amount);
         }
         return newQty;
     }

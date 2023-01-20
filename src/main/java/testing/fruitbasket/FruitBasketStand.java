@@ -3,7 +3,7 @@ package testing.fruitbasket;
 import java.util.*;
 
 
-public class BasketStand {
+public class FruitBasketStand {
     HashMap<String,List<Fruit>> sortedFruit=new HashMap<>();
     List<String> topShelf=new ArrayList<>();
     List<String> milddleShelf=new ArrayList<>();

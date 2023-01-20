@@ -7,7 +7,7 @@ public class BillPayment {
 
         Product milk=(new Product("Milk",70.00,"liter"));
         Product apple=new Product("Apple",110.00, "kg");
-        Product newspaper=new Product("NewsPaper",12.00, "");
+        Product newspaper=new Product("NewsPaper",12.00, "unit");
         Product oranges=new Product("Oranges",100.00, "kg");
 
 

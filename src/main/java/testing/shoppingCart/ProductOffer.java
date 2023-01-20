@@ -30,7 +30,7 @@ public class ProductOffer {
         double qty = amount;
         return qty;
     }
-    public static double getOffer(String name, double amount) {
+    public static double applyOffer(String name, double amount) {
         double newQty=0;
         if(name.equalsIgnoreCase("Milk")){
             newQty= getMilkOffer(amount);

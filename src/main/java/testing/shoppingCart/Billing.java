@@ -8,11 +8,8 @@ public class Billing {
             double ptotal = 0;
             total = total + map.getKey().getPrice() * map.getValue();
             ptotal = map.getKey().getPrice() * map.getValue();
-            System.out.println(map.getKey().getName()+" : "+ ProductOffer.getOffer(map.getKey().getName(),map.getValue())
-                    +map.getKey().getUnit()+" : "+ ptotal);
-
+            System.out.println(map.getKey().getName()+" : "+ ProductOffer.applyOffer(map.getKey().getName(),map.getValue())
+                    +" "+map.getKey().getUnit()+" : "+ ptotal);
         }
-
     }
-
 }

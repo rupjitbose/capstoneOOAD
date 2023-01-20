@@ -1,11 +1,8 @@
 package testing.fruitbasket;
 
-import java.util.ArrayList;
-import java.util.List;
+public class Runner {
 
-public class BigBowl {
-    public List<Fruit> fruitList =new ArrayList<>();
-    public static void main(String[] ags){
+    public static void main(String[] args){
 
         Fruit orange=new Fruit("orange","orange","big","sweet");
         Fruit lime=new Fruit("lime","green","mid","sour");
@@ -13,7 +10,7 @@ public class BigBowl {
         Fruit grep=new Fruit("grep","green","small","sweet");
         Fruit mango=new Fruit("mango","yellow","big","sweet");
 
-        BigBowl b=new BigBowl();
+        FruitBowl b=new FruitBowl();
         b.fruitList.add(grep);
         b.fruitList.add(orange);
         b.fruitList.add(lime);
@@ -21,7 +18,7 @@ public class BigBowl {
         b.fruitList.add(apple);
         System.out.println("Big Bowl have: "+b);
 
-        BasketStand bs=new BasketStand();
+        FruitBasketStand bs=new FruitBasketStand();
 
         bs.sortBySize(b.fruitList);
         bs.showBasket();
@@ -31,14 +28,5 @@ public class BigBowl {
 
         bs.sortByType(b.fruitList);
         bs.showBasket();
-    }
-
-    @Override
-    public String toString(){
-        String s="";
-        for(Fruit f:  this.fruitList){
-            s=s+f.getName()+" ,";
-        }
-        return s+"\n" ;
     }
 }

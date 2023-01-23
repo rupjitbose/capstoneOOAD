@@ -8,41 +8,42 @@ public class FruitBasketStand {
     List<String> topShelf=new ArrayList<>();
     List<String> milddleShelf=new ArrayList<>();
     List<String> bottomShelf=new ArrayList<>();
-    List<String > listOfColorOrSizeOrType =new ArrayList<>();
+    List<String> listOfColorOrSizeOrType =new ArrayList<>();
 
-    private void emptyShelfs(){
+    private void emptyShelves(){
         topShelf.clear();
         milddleShelf.clear();
         bottomShelf.clear();
         listOfColorOrSizeOrType.clear();
     }
 
-    public void sortbByColor(List<Fruit> lf) {
+    public void sortbByColor(FruitBowl fruitBowl) {
         System.out.println("Sorting by color:");
-        emptyShelfs();
-        for (int i = 0; i < lf.size(); i++) {
-            String data=lf.get(i).getColor();
-            addToSortList(data, lf, i, listOfColorOrSizeOrType);
+        emptyShelves();
+
+        for (int i = 0; i < fruitBowl.getFruitList().size(); i++) {
+            String data=fruitBowl.getFruitList().get(i).getColor();
+            addToSortList(data, fruitBowl.getFruitList(), i, listOfColorOrSizeOrType);
         }
         addToShelf(listOfColorOrSizeOrType);
     }
 
-    public void sortByType(List<Fruit> lf){
+    public void sortByType(FruitBowl fruitBowl){
         System.out.println("Sorting by Type:");
-        emptyShelfs();
-        for (int i = 0; i < lf.size(); i++) {
-            String data=lf.get(i).getType();
-            addToSortList(data, lf, i, listOfColorOrSizeOrType);
+        emptyShelves();
+        for (int i = 0; i < fruitBowl.getFruitList().size(); i++) {
+            String data=fruitBowl.getFruitList().get(i).getType();
+            addToSortList(data, fruitBowl.getFruitList(), i, listOfColorOrSizeOrType);
         }
         addToShelf(listOfColorOrSizeOrType);
     }
 
-    public void sortBySize(List<Fruit> lf){
+    public void sortBySize(FruitBowl fruitBowl){
         System.out.println("Sorting by Size:");
-        emptyShelfs();
-        for (int i = 0; i < lf.size(); i++) {
-            String data=lf.get(i).getSize();
-            addToSortList(data, lf, i, listOfColorOrSizeOrType);
+        emptyShelves();
+        for (int i = 0; i < fruitBowl.getFruitList().size(); i++) {
+            String data=fruitBowl.getFruitList().get(i).getSize();
+            addToSortList(data, fruitBowl.getFruitList(), i, listOfColorOrSizeOrType);
         }
         addToShelf(listOfColorOrSizeOrType);
     }
